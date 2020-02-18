@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>jQuery UI Checkboxradio - Default functionality</title>
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="https:/resources/demos/style.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  
+</head>
+<body>
+<div class="widget">
+  <h1>Checkbox and radio button widgets</h1>
+ 
+  <h2>Radio Group</h2>
+  <fieldset>
+    <legend>Select a Location: </legend>
+    <label for="radio-1">New York</label>
+    <input type="radio" name="radio-1" id="radio-1">
+    <label for="radio-2">Paris</label>
+    <input type="radio" name="radio-1" id="radio-2">
+    <label for="radio-3">London</label>
+    <input type="radio" name="radio-1" id="radio-3">
+    <label for="radio-4">male</label>
+    <input type="radio" name="radio-1" id="radio-4">
+  </fieldset>
+ 
+  <h2>Checkbox</h2>
+  <fieldset>
+    <legend>Hotel Ratings: </legend>
+    <label for="checkbox-1">2 Star</label>
+    <input type="checkbox" name="checkbox-1" id="checkbox-1">
+    <label for="checkbox-2">3 Star</label>
+    <input type="checkbox" name="checkbox-2" id="checkbox-2">
+    <label for="checkbox-3">4 Star</label>
+    <input type="checkbox" name="checkbox-3" id="checkbox-3">
+    <label for="checkbox-4">5 Star</label>
+    <input type="checkbox" name="checkbox-4" id="checkbox-4">
+  </fieldset>
+ 
+  <h2>Checkbox nested in label</h2>
+  
+   
+    <label for="checkbox-nested-1">2 Double
+      <input type="checkbox" name="checkbox-nested-1" id="checkbox-nested-1"></label>
+      <label for="checkbox-nested-2">cricket
+      <input type="checkbox" name="checkbox-nested-2" id="checkbox-nested-2"></label>
+</div>
+<div>
+    <label for="radio-5">see</label>
+    <input type="radio" name="radio-1" id="radio-5">
+    <label for="radio-6">hee</label>
+    <input type="radio" name="radio-1" id="radio-6">
+</div>
+
+  <p>Date:
+  <input type="text" name="" id="datepicker"></p>
+  <div>
+    <span>GETDATE
+      <input type="text" name="" id="datep">
+    </span>
+  </div>
+  <div class="widget">
+    <h1>control-group</h1>
+    <div class="controlgroup">
+      <select name="" id="">
+        <option value="hai">venky</option>
+        <option value="bye">jai</option>
+        <option value="see">dora</option>
+      </select>
+      <label for="horizontal-spinner" class="ui-controlgroup-label"># of cars</label>
+      <input id="horizontal-spinner" class="ui-spinner-input" style="width: 20px;">
+      <button id="btn">BOOKNOW !</button>
+      <div id="dialog" title="Basic dialog" style="display: none;">
+        <p>This is the default dialog which is useful for displaying information. The dialog window can be moved, resized and closed with the 'x' icon.</p>
+      </div>
+    </div>
+  </div>
+  <div class="demo">
+    
+    <select name="speed" id="speed">
+  <option value="">ram</option>
+  <option value="">jai</option>
+  <option value="" selected="selected">ven</option>
+    </select>
+  </div>
+  <div class="tabs" style="width:250px;">
+    <ul>
+      <li><a href="#tab1">ven</a></li>
+      <li><a href="#tab2">raj</a></li>
+      <li><a href="#tab3">dora</a></li>
+    </ul>
+    <div id="tab1">
+      <p>show the first tab informaton</p>
+    </div>
+    <div id="tab2">
+      <p>show the second tab informaton</p>
+    </div>
+    <div id="tab3">
+      <p>show the third informaton</p>
+    </div>
+  </div>
+  <fieldset style="margin-top: 50px;">
+  <legend>hai this is tooltip</legend>
+  <div>
+   
+    <label for="age">Your age:</label>
+    <input type="age" name="" id="" title="we ask your age">
+  </div>
+</fieldset>
+<div>
+  <fieldset>
+    <legend>hey this is spinner information</legend>
+    <label for="spinner">Set value</label>
+    <input name="value" id="spinner">
+    <button id="setvalue">Setvalue 5</button>
+    <button id="disab">disabled</button>
+  </fieldset>
+</div>
+</body>
+<script>
+  $( function() {
+    $(document).tooltip()
+    $(".tabs").tabs()
+    $("#speed").selectmenu()
+   $(".controlgroup").controlgroup()
+    $("#datepicker").datepicker();
+    $("$speed").selectmenu()
+    $("#datep").datepicker();
+    $( "input" ).checkboxradio();
+    $("button").button()
+  
+  } ); 
+  $("#setvalue").click(function(){
+    var spinner=$("#spinner").spinner()
+    spinner.spinner("value",5)
+  })
+  $("#disab").click(function(){
+    var spinner=$("#spinner").spinner()
+   if(spinner.spinner("option","disabled")){
+     spinner.spinner("enable")
+   }
+   else
+   spinner.spinner("disable")
+  })
+  $("#btn").click(function(){
+    $("#dialog").show()
+     $("#dialog").dialog()
+  }) 
+</script>
+</html>
